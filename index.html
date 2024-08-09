@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            position: relative;
+            scroll-behavior: smooth;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #d1d1d1;
+        }
+
+        .about-section,
+        .projects-section,
+        .skills-section,
+        .contact-section {
+            padding: 50px 0;
+        }
+
+        .about-section img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+        .about-section h2,
+        .projects-section h2,
+        .skills-section h2,
+        .contact-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-text {
+            height: 100px;
+            overflow: hidden;
+        }
+
+        .card-links {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .skill-icon {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .skill-card p {
+            margin-top: 10px;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .contact-section h2 {
+            color: black;
+        }
+
+        .social-icons img {
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+        }
+
+        .contact-info {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home" data-i18n="nav.home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-i18n="nav.about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-i18n="nav.language">
+                            Language
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('es')">Español</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('ca')">Català</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('de')">Deutsch</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('fr')">Français</a>
+                            <a class="dropdown-item" href="#" onclick="changeLanguage('fi')">Suomi</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1 data-i18n="home.title">Welcome to My Portfolio</h1>
+                <p data-i18n="home.subtitle">Explore my work and skills.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2 data-i18n="about.title">About Me</h2>
+            <div class="text-center">
+                <img src="images/about/Naz.jpg.jpg" alt="About Image">
+            </div>
+            <p data-i18n="about.paragraph1">I am a dedicated Data Scientist with a robust foundation in machine learning, deep learning, and statistical modeling. My journey in data science is characterized by rigorous academic training and extensive hands-on experience. I employ traditional statistical techniques and time series analysis for comprehensive data interpretation.</p>
+            <p data-i18n="about.paragraph2">Driven by a passion for leveraging data to inform decision-making and foster innovation, I continuously learn and adapt to emerging technologies and methodologies. My primary interests encompass data analysis, operations research, data visualization, and business intelligence. I am committed to delivering data-driven solutions that are impactful, strategic, unbiased, and ethically conducted, aiding organizations in achieving their objectives and enhancing overall performance.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 data-i18n="projects.title">Projects</h2>
+
+            <h3 data-i18n="projects.academic.title">Academic Projects</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/1.jpg" class="card-img-top" alt="Boston Crime Analysis">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.academic.project1.title">Boston Crime Analysis</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/Crimes-in-Boston/blob/main/Crimes_Boston_.ipynb" class="card-link" target="_blank" data-i18n="projects.academic.project1.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/2.jpg" class="card-img-top" alt="Deep Learning Project Vision">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.academic.project2.title">Deep Learning Project Vision</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/CIFAR10/blob/main/CIFAR10_Image_Classification/CIFAR10_DL_Project_01Vision.ipynb" class="card-link" target="_blank" data-i18n="projects.academic.project2.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/3.jpg" class="card-img-top" alt="Microsoft Malware Prediction">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.academic.project3.title">Microsoft Malware Prediction</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/Microsoft-Malware-Prediction/blob/main/Microsoft_Malware_Prediction.ipynb" class="card-link" target="_blank" data-i18n="projects.academic.project3.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/4.jpg" class="card-img-top" alt="Customer Insights and Marketing Strategy">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.academic.project4.title">Customer Insights and Marketing Strategy</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/Marketing_DS_Project/blob/main/Nazmul.Rmd" class="card-link" target="_blank" data-i18n="projects.academic.project4.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 data-i18n="projects.self.title">Self-Driven Projects</h3>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/5.jpg" class="card-img-top" alt="StockPredict">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.self.project5.title">StockPredict</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/StockPredict-Advanced-Stock-Market-Prediction-and-Forecasting-System/blob/main/Apple%20Stock/stock_pre.ipynb" class="card-link" target="_blank" data-i18n="projects.self.project5.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/6.jpg" class="card-img-top" alt="HealthCostForecast">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.self.project6.title">HealthCostForecast</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/HealthCostForecast/blob/main/HealthCostForecast.Rmd" class="card-link" target="_blank" data-i18n="projects.self.project6.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/7.jpg" class="card-img-top" alt="PredictHer-Health">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.self.project7.title">PredictHer-Health</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/PredictHer-Health-Advanced-Machine-Learning-for-Early-Breast-Cancer-Detection/blob/main/PredictHer%20Health/PredictHerHealth.ipynb" class="card-link" target="_blank" data-i18n="projects.self.project7.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card">
+                        <img src="images/projects/8.jpg" class="card-img-top" alt="ClimateFusion">
+                        <div class="card-body">
+                            <h5 class="card-title" data-i18n="projects.self.project8.title">ClimateFusion</h5>
+                            <div class="card-links">
+                                <a href="https://github.com/Najam0786/ClimateFusion-Harnessing-AI-for-Climate-Resilience/blob/main/ClimateFusion/ClimateFusion.ipynb" class="card-link" target="_blank" data-i18n="projects.self.project8.source">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2 data-i18n="skills.title">Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/1.png" class="skill-icon" alt="Python">
+                        <h5 data-i18n="skills.python.title">Python</h5>
+                        <p data-i18n="skills.python.description">Proficient in Python for data analysis, machine learning, and automation, leveraging libraries like pandas, NumPy, and scikit-learn.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/2.png" class="skill-icon" alt="Data Visualization">
+                        <h5 data-i18n="skills.data_visualization.title">Data Visualization</h5>
+                        <p data-i18n="skills.data_visualization.description">Skilled in creating insightful visualizations using tools like Matplotlib, Seaborn, and Tableau to convey data-driven insights.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/3.png" class="skill-icon" alt="SQL">
+                        <h5 data-i18n="skills.sql.title">SQL</h5>
+                        <p data-i18n="skills.sql.description">Experienced in writing complex SQL queries for data extraction, transformation, and analysis in relational databases.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/4.png" class="skill-icon" alt="Data Storytelling">
+                        <h5 data-i18n="skills.data_storytelling.title">Data Storytelling</h5>
+                        <p data-i18n="skills.data_storytelling.description">Adept at crafting compelling narratives around data to inform and persuade stakeholders using clear and effective communication.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/5.png" class="skill-icon" alt="R Programming">
+                        <h5 data-i18n="skills.r_programming.title">R Programming</h5>
+                        <p data-i18n="skills.r_programming.description">Proficient in R for statistical analysis and visualization, utilizing packages like ggplot2, dplyr, and tidyr.</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="skill-card">
+                        <img src="images/skills/6.png" class="skill-icon" alt="Statistics">
+                        <h5 data-i18n="skills.statistics.title">Statistics</h5>
+                        <p data-i18n="skills.statistics.description">Strong foundation in statistical methods and techniques for data analysis, hypothesis testing, and predictive modeling.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 data-i18n="contact.title">Contact Me</h2>
+            <div class="contact-info">
+                <p data-i18n="contact.email"><strong>Email:</strong> nazmulfarooquee@gmail.com</p>
+                <p data-i18n="contact.phone"><strong>Mobile:</strong> +34687334497</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/nazmul-farooquee-0b433b1b/" target="_blank"><img src="icons/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/Najam0786" target="_blank"><img src="icons/github.png" alt="GitHub"></a>
+                <a href="https://x.com/NazmulF" target="_blank"><img src="icons/twitter.png" alt="X (formerly Twitter)"></a>
+                <a href="https://medium.com/@nazmulfarooquee" target="_blank"><img src="icons/medium.png" alt="Medium"></a>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.4/i18next.min.js"></script>
+    <script>
+        const resources = {
+            en: {
+                translation: {
+                    nav: {
+                        home: "Home",
+                        about: "About",
+                        projects: "Projects",
+                        skills: "Skills",
+                        contact: "Contact",
+                        language: "Language"
+                    },
+                    home: {
+                        title: "Welcome to My Portfolio",
+                        subtitle: "Explore my work and skills."
+                    },
+                    about: {
+                        title: "About Me",
+                        paragraph1: "I am a dedicated Data Scientist with a robust foundation in machine learning, deep learning, and statistical modeling. My journey in data science is characterized by rigorous academic training and extensive hands-on experience. I employ traditional statistical techniques and time series analysis for comprehensive data interpretation.",
+                        paragraph2: "Driven by a passion for leveraging data to inform decision-making and foster innovation, I continuously learn and adapt to emerging technologies and methodologies. My primary interests encompass data analysis, operations research, data visualization, and business intelligence. I am committed to delivering data-driven solutions that are impactful, strategic, unbiased, and ethically conducted, aiding organizations in achieving their objectives and enhancing overall performance."
+                    },
+                    projects: {
+                        title: "Projects",
+                        academic: {
+                            title: "Academic Projects",
+                            project1: {
+                                title: "Boston Crime Analysis",
+                                source: "Source Code"
+                            },
+                            project2: {
+                                title: "Deep Learning Project Vision",
+                                source: "Source Code"
+                            },
+                            project3: {
+                                title: "Microsoft Malware Prediction",
+                                source: "Source Code"
+                            },
+                            project4: {
+                                title: "Customer Insights and Marketing Strategy",
+                                source: "Source Code"
+                            }
+                        },
+                        self: {
+                            title: "Self-Driven Projects",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Source Code"
+                            },
+                            project6: {
+                                title: "HealthCostForecast",
+                                source: "Source Code"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Source Code"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Source Code"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Skills",
+                        python: {
+                            title: "Python",
+                            description: "Proficient in Python for data analysis, machine learning, and automation, leveraging libraries like pandas, NumPy, and scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Data Visualization",
+                            description: "Skilled in creating insightful visualizations using tools like Matplotlib, Seaborn, and Tableau to convey data-driven insights."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Experienced in writing complex SQL queries for data extraction, transformation, and analysis in relational databases."
+                        },
+                        data_storytelling: {
+                            title: "Data Storytelling",
+                            description: "Adept at crafting compelling narratives around data to inform and persuade stakeholders using clear and effective communication."
+                        },
+                        r_programming: {
+                            title: "R Programming",
+                            description: "Proficient in R for statistical analysis and visualization, utilizing packages like ggplot2, dplyr, and tidyr."
+                        },
+                        statistics: {
+                            title: "Statistics",
+                            description: "Strong foundation in statistical methods and techniques for data analysis, hypothesis testing, and predictive modeling."
+                        }
+                    },
+                    contact: {
+                        title: "Contact Me",
+                        email: "<strong>Email:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Mobile:</strong> +34687334497"
+                    }
+                }
+            },
+            es: {
+                translation: {
+                    nav: {
+                        home: "Inicio",
+                        about: "Acerca de",
+                        projects: "Proyectos",
+                        skills: "Habilidades",
+                        contact: "Contacto",
+                        language: "Idioma"
+                    },
+                    home: {
+                        title: "Bienvenido a Mi Portafolio",
+                        subtitle: "Explora mi trabajo y habilidades."
+                    },
+                    about: {
+                        title: "Acerca de mí",
+                        paragraph1: "Soy un Científico de Datos dedicado con una base sólida en aprendizaje automático, aprendizaje profundo y modelado estadístico. Mi trayectoria en la ciencia de datos se caracteriza por una rigurosa formación académica y una amplia experiencia práctica. Empleo técnicas estadísticas tradicionales y análisis de series temporales para una interpretación integral de los datos.",
+                        paragraph2: "Impulsado por una pasión por aprovechar los datos para informar la toma de decisiones y fomentar la innovación, aprendo y me adapto continuamente a las tecnologías y metodologías emergentes. Mis intereses principales abarcan el análisis de datos, la investigación operativa, la visualización de datos y la inteligencia empresarial. Estoy comprometido a ofrecer soluciones basadas en datos que sean impactantes, estratégicas, imparciales y éticamente realizadas, ayudando a las organizaciones a lograr sus objetivos y mejorar su desempeño general."
+                    },
+                    projects: {
+                        title: "Proyectos",
+                        academic: {
+                            title: "Proyectos Académicos",
+                            project1: {
+                                title: "Análisis de Crímenes en Boston",
+                                source: "Código Fuente"
+                            },
+                            project2: {
+                                title: "Visión de Proyecto de Aprendizaje Profundo",
+                                source: "Código Fuente"
+                            },
+                            project3: {
+                                title: "Predicción de Malware de Microsoft",
+                                source: "Código Fuente"
+                            },
+                            project4: {
+                                title: "Estrategia de Marketing e Información del Cliente",
+                                source: "Código Fuente"
+                            }
+                        },
+                        self: {
+                            title: "Proyectos Autodirigidos",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Código Fuente"
+                            },
+                            project6: {
+                                title: "Previsión de Costos de Salud",
+                                source: "Código Fuente"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Código Fuente"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Código Fuente"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Habilidades",
+                        python: {
+                            title: "Python",
+                            description: "Competente en Python para análisis de datos, aprendizaje automático y automatización, aprovechando bibliotecas como pandas, NumPy y scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Visualización de Datos",
+                            description: "Habilidad en la creación de visualizaciones perspicaces utilizando herramientas como Matplotlib, Seaborn y Tableau para transmitir conocimientos basados en datos."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Experiencia en la redacción de consultas SQL complejas para la extracción, transformación y análisis de datos en bases de datos relacionales."
+                        },
+                        data_storytelling: {
+                            title: "Narración de Datos",
+                            description: "Experto en la creación de narrativas convincentes alrededor de los datos para informar y persuadir a las partes interesadas mediante una comunicación clara y efectiva."
+                        },
+                        r_programming: {
+                            title: "Programación en R",
+                            description: "Competente en R para análisis estadístico y visualización, utilizando paquetes como ggplot2, dplyr y tidyr."
+                        },
+                        statistics: {
+                            title: "Estadísticas",
+                            description: "Sólida base en métodos y técnicas estadísticas para el análisis de datos, pruebas de hipótesis y modelado predictivo."
+                        }
+                    },
+                    contact: {
+                        title: "Contáctame",
+                        email: "<strong>Email:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Móvil:</strong> +34687334497"
+                    }
+                }
+            },
+            ca: {
+                translation: {
+                    nav: {
+                        home: "Inici",
+                        about: "Sobre mi",
+                        projects: "Projectes",
+                        skills: "Habilitats",
+                        contact: "Contacte",
+                        language: "Idioma"
+                    },
+                    home: {
+                        title: "Benvingut al meu Portafoli",
+                        subtitle: "Explora el meu treball i habilitats."
+                    },
+                    about: {
+                        title: "Sobre mi",
+                        paragraph1: "Sóc un Científic de Dades dedicat amb una base sòlida en aprenentatge automàtic, aprenentatge profund i modelatge estadístic. El meu viatge en la ciència de dades es caracteritza per una formació acadèmica rigorosa i una àmplia experiència pràctica. Empreu tècniques estadístiques tradicionals i anàlisis de sèries temporals per a una interpretació integral de les dades.",
+                        paragraph2: "Impulsat per una passió per aprofitar les dades per informar la presa de decisions i fomentar la innovació, aprenc i m'adapto contínuament a les tecnologies i metodologies emergents. Els meus interessos principals inclouen l'anàlisi de dades, la investigació operativa, la visualització de dades i la intel·ligència empresarial. Estic compromès a oferir solucions basades en dades que siguin impactants, estratègiques, imparcials i realitzades èticament, ajudant les organitzacions a assolir els seus objectius i millorar el seu rendiment general."
+                    },
+                    projects: {
+                        title: "Projectes",
+                        academic: {
+                            title: "Projectes Acadèmics",
+                            project1: {
+                                title: "Anàlisi de Crims a Boston",
+                                source: "Codi Font"
+                            },
+                            project2: {
+                                title: "Visió del Projecte d'Aprenentatge Profund",
+                                source: "Codi Font"
+                            },
+                            project3: {
+                                title: "Predicció de Programari Maliciós de Microsoft",
+                                source: "Codi Font"
+                            },
+                            project4: {
+                                title: "Estratègia de Màrqueting i Informació del Client",
+                                source: "Codi Font"
+                            }
+                        },
+                        self: {
+                            title: "Projectes Autodirigits",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Codi Font"
+                            },
+                            project6: {
+                                title: "Previsió de Costos de Salut",
+                                source: "Codi Font"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Codi Font"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Codi Font"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Habilitats",
+                        python: {
+                            title: "Python",
+                            description: "Competent en Python per a l'anàlisi de dades, l'aprenentatge automàtic i l'automatització, aprofitant biblioteques com pandas, NumPy i scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Visualització de Dades",
+                            description: "Habilitat en la creació de visualitzacions perspicaços utilitzant eines com Matplotlib, Seaborn i Tableau per transmetre coneixements basats en dades."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Experiència en la redacció de consultes SQL complexes per a l'extracció, transformació i anàlisi de dades en bases de dades relacionals."
+                        },
+                        data_storytelling: {
+                            title: "Narració de Dades",
+                            description: "Expert en la creació de narratives convincents al voltant de les dades per informar i persuadir les parts interessades mitjançant una comunicació clara i efectiva."
+                        },
+                        r_programming: {
+                            title: "Programació en R",
+                            description: "Competent en R per a l'anàlisi estadística i la visualització, utilitzant paquets com ggplot2, dplyr i tidyr."
+                        },
+                        statistics: {
+                            title: "Estadístiques",
+                            description: "Sòlida base en mètodes i tècniques estadístiques per a l'anàlisi de dades, proves d'hipòtesis i modelatge predictiu."
+                        }
+                    },
+                    contact: {
+                        title: "Contacta'm",
+                        email: "<strong>Email:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Mòbil:</strong> +34687334497"
+                    }
+                }
+            },
+            de: {
+                translation: {
+                    nav: {
+                        home: "Startseite",
+                        about: "Über mich",
+                        projects: "Projekte",
+                        skills: "Fähigkeiten",
+                        contact: "Kontakt",
+                        language: "Sprache"
+                    },
+                    home: {
+                        title: "Willkommen in meinem Portfolio",
+                        subtitle: "Erkunden Sie meine Arbeit und Fähigkeiten."
+                    },
+                    about: {
+                        title: "Über mich",
+                        paragraph1: "Ich bin ein engagierter Data Scientist mit einer soliden Grundlage in maschinellem Lernen, Deep Learning und statistischer Modellierung. Mein Weg in der Datenwissenschaft ist geprägt von einer rigorosen akademischen Ausbildung und umfangreicher praktischer Erfahrung. Ich nutze traditionelle statistische Techniken und Zeitreihenanalysen für eine umfassende Dateninterpretation.",
+                        paragraph2: "Angetrieben von der Leidenschaft, Daten zu nutzen, um Entscheidungsprozesse zu informieren und Innovationen zu fördern, lerne und passe ich mich kontinuierlich an aufkommende Technologien und Methoden an. Meine Hauptinteressen umfassen Datenanalyse, Operations Research, Datenvisualisierung und Business Intelligence. Ich bin bestrebt, datengesteuerte Lösungen zu liefern, die wirkungsvoll, strategisch, unvoreingenommen und ethisch durchgeführt werden, um Organisationen dabei zu helfen, ihre Ziele zu erreichen und ihre Gesamtleistung zu verbessern."
+                    },
+                    projects: {
+                        title: "Projekte",
+                        academic: {
+                            title: "Akademische Projekte",
+                            project1: {
+                                title: "Kriminalitätsanalyse in Boston",
+                                source: "Quellcode"
+                            },
+                            project2: {
+                                title: "Deep Learning Projekt Vision",
+                                source: "Quellcode"
+                            },
+                            project3: {
+                                title: "Microsoft Malware-Vorhersage",
+                                source: "Quellcode"
+                            },
+                            project4: {
+                                title: "Kundeninformationen und Marketingstrategie",
+                                source: "Quellcode"
+                            }
+                        },
+                        self: {
+                            title: "Selbstgesteuerte Projekte",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Quellcode"
+                            },
+                            project6: {
+                                title: "Gesundheitskostenprognose",
+                                source: "Quellcode"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Quellcode"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Quellcode"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Fähigkeiten",
+                        python: {
+                            title: "Python",
+                            description: "Kompetent in Python für Datenanalyse, maschinelles Lernen und Automatisierung unter Nutzung von Bibliotheken wie pandas, NumPy und scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Datenvisualisierung",
+                            description: "Geschickt in der Erstellung aufschlussreicher Visualisierungen mit Tools wie Matplotlib, Seaborn und Tableau, um datengetriebene Erkenntnisse zu vermitteln."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Erfahren im Schreiben komplexer SQL-Abfragen für die Extraktion, Transformation und Analyse von Daten in relationalen Datenbanken."
+                        },
+                        data_storytelling: {
+                            title: "Datenstorytelling",
+                            description: "Experte im Erstellen überzeugender Erzählungen rund um Daten, um Stakeholder klar und effektiv zu informieren und zu überzeugen."
+                        },
+                        r_programming: {
+                            title: "R-Programmierung",
+                            description: "Kompetent in R für statistische Analyse und Visualisierung unter Nutzung von Paketen wie ggplot2, dplyr und tidyr."
+                        },
+                        statistics: {
+                            title: "Statistik",
+                            description: "Starke Grundlage in statistischen Methoden und Techniken für Datenanalyse, Hypothesentests und prädiktive Modellierung."
+                        }
+                    },
+                    contact: {
+                        title: "Kontaktieren Sie mich",
+                        email: "<strong>Email:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Mobil:</strong> +34687334497"
+                    }
+                }
+            },
+            fr: {
+                translation: {
+                    nav: {
+                        home: "Accueil",
+                        about: "À propos",
+                        projects: "Projets",
+                        skills: "Compétences",
+                        contact: "Contact",
+                        language: "Langue"
+                    },
+                    home: {
+                        title: "Bienvenue sur mon portfolio",
+                        subtitle: "Explorez mon travail et mes compétences."
+                    },
+                    about: {
+                        title: "À propos de moi",
+                        paragraph1: "Je suis un Data Scientist dédié avec une solide base en apprentissage automatique, apprentissage profond et modélisation statistique. Mon parcours en science des données est caractérisé par une formation académique rigoureuse et une vaste expérience pratique. J'utilise des techniques statistiques traditionnelles et des analyses de séries chronologiques pour une interprétation complète des données.",
+                        paragraph2: "Animé par une passion pour tirer parti des données pour éclairer la prise de décision et favoriser l'innovation, j'apprends et m'adapte continuellement aux technologies et méthodologies émergentes. Mes principaux intérêts englobent l'analyse des données, la recherche opérationnelle, la visualisation des données et l'intelligence économique. Je m'engage à fournir des solutions basées sur les données qui sont percutantes, stratégiques, impartiales et menées de manière éthique, aidant les organisations à atteindre leurs objectifs et à améliorer leurs performances globales."
+                    },
+                    projects: {
+                        title: "Projets",
+                        academic: {
+                            title: "Projets Académiques",
+                            project1: {
+                                title: "Analyse de la Criminalité à Boston",
+                                source: "Code Source"
+                            },
+                            project2: {
+                                title: "Projet Vision d'Apprentissage Profond",
+                                source: "Code Source"
+                            },
+                            project3: {
+                                title: "Prédiction des Logiciels Malveillants de Microsoft",
+                                source: "Code Source"
+                            },
+                            project4: {
+                                title: "Stratégie Marketing et Informations sur les Clients",
+                                source: "Code Source"
+                            }
+                        },
+                        self: {
+                            title: "Projets Autodirigés",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Code Source"
+                            },
+                            project6: {
+                                title: "Prévision des Coûts de Santé",
+                                source: "Code Source"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Code Source"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Code Source"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Compétences",
+                        python: {
+                            title: "Python",
+                            description: "Compétent en Python pour l'analyse de données, l'apprentissage automatique et l'automatisation, utilisant des bibliothèques telles que pandas, NumPy et scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Visualisation de Données",
+                            description: "Compétent dans la création de visualisations perspicaces en utilisant des outils tels que Matplotlib, Seaborn et Tableau pour transmettre des informations basées sur les données."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Expérimenté dans l'écriture de requêtes SQL complexes pour l'extraction, la transformation et l'analyse de données dans des bases de données relationnelles."
+                        },
+                        data_storytelling: {
+                            title: "Narration de Données",
+                            description: "Adepte à créer des récits convaincants autour des données pour informer et persuader les parties prenantes en utilisant une communication claire et efficace."
+                        },
+                        r_programming: {
+                            title: "Programmation en R",
+                            description: "Compétent en R pour l'analyse statistique et la visualisation, utilisant des packages tels que ggplot2, dplyr et tidyr."
+                        },
+                        statistics: {
+                            title: "Statistiques",
+                            description: "Solide fondation en méthodes et techniques statistiques pour l'analyse de données, les tests d'hypothèses et la modélisation prédictive."
+                        }
+                    },
+                    contact: {
+                        title: "Contactez-moi",
+                        email: "<strong>Email:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Mobile:</strong> +34687334497"
+                    }
+                }
+            },
+            fi: {
+                translation: {
+                    nav: {
+                        home: "Koti",
+                        about: "Tietoa",
+                        projects: "Projektit",
+                        skills: "Taidot",
+                        contact: "Yhteystiedot",
+                        language: "Kieli"
+                    },
+                    home: {
+                        title: "Tervetuloa portfoliooni",
+                        subtitle: "Tutustu töihini ja taitoihini."
+                    },
+                    about: {
+                        title: "Tietoa minusta",
+                        paragraph1: "Olen omistautunut datatieteilijä, jolla on vankka perusta koneoppimisessa, syväoppimisessa ja tilastomallinnuksessa. Data Science -matkani on luonteenomainen tiukka akateeminen koulutus ja laaja käytännön kokemus. Käytän perinteisiä tilastollisia tekniikoita ja aikasarja-analyysejä kattavaan tietojen tulkintaan.",
+                        paragraph2: "Innostunut hyödyntämään tietoja päätöksenteon tiedottamiseen ja innovoinnin edistämiseen, opin ja sopeudun jatkuvasti uusiin teknologioihin ja menetelmiin. Pääkiinnostukseni ovat data-analyysi, operatiivinen tutkimus, datan visualisointi ja liiketoimintatiedot. Olen sitoutunut toimittamaan tietoon perustuvia ratkaisuja, jotka ovat vaikuttavia, strategisia, puolueettomia ja eettisesti toteutettuja, auttaen organisaatioita saavuttamaan tavoitteensa ja parantamaan kokonaisvaltaista suorituskykyä."
+                    },
+                    projects: {
+                        title: "Projektit",
+                        academic: {
+                            title: "Akatemiset projektit",
+                            project1: {
+                                title: "Bostonin rikosten analyysi",
+                                source: "Lähdekoodi"
+                            },
+                            project2: {
+                                title: "Deep Learning Project Vision",
+                                source: "Lähdekoodi"
+                            },
+                            project3: {
+                                title: "Microsoftin haittaohjelmien ennustaminen",
+                                source: "Lähdekoodi"
+                            },
+                            project4: {
+                                title: "Asiakastiedot ja markkinointistrategia",
+                                source: "Lähdekoodi"
+                            }
+                        },
+                        self: {
+                            title: "Omakseen ohjatut projektit",
+                            project5: {
+                                title: "StockPredict",
+                                source: "Lähdekoodi"
+                            },
+                            project6: {
+                                title: "Terveyskustannusten ennustaminen",
+                                source: "Lähdekoodi"
+                            },
+                            project7: {
+                                title: "PredictHer-Health",
+                                source: "Lähdekoodi"
+                            },
+                            project8: {
+                                title: "ClimateFusion",
+                                source: "Lähdekoodi"
+                            }
+                        }
+                    },
+                    skills: {
+                        title: "Taidot",
+                        python: {
+                            title: "Python",
+                            description: "Taitava Pythonin käytössä data-analyysiin, koneoppimiseen ja automaatioon, hyödyntäen kirjastoja kuten pandas, NumPy ja scikit-learn."
+                        },
+                        data_visualization: {
+                            title: "Datan visualisointi",
+                            description: "Taitava luomaan oivaltavia visualisointeja käyttämällä työkaluja kuten Matplotlib, Seaborn ja Tableau välittääkseen dataan perustuvia oivalluksia."
+                        },
+                        sql: {
+                            title: "SQL",
+                            description: "Kokenut kirjoittamaan monimutkaisia SQL-kyselyjä datan hakuun, muuntamiseen ja analysointiin relaatiotietokannoissa."
+                        },
+                        data_storytelling: {
+                            title: "Datan tarinankerronta",
+                            description: "Taitava luomaan vakuuttavia narratiiveja datan ympärille informoidakseen ja vakuuttaakseen sidosryhmiä selkeällä ja tehokkaalla viestinnällä."
+                        },
+                        r_programming: {
+                            title: "R-ohjelmointi",
+                            description: "Taitava R:n käytössä tilastolliseen analyysiin ja visualisointiin, hyödyntäen paketteja kuten ggplot2, dplyr ja tidyr."
+                        },
+                        statistics: {
+                            title: "Tilastotiede",
+                            description: "Vahva perusta tilastomenetelmissä ja -tekniikoissa data-analyysiin, hypoteesien testaukseen ja ennustavaan mallinnukseen."
+                        }
+                    },
+                    contact: {
+                        title: "Ota yhteyttä",
+                        email: "<strong>Sähköposti:</strong> nazmulfarooquee@gmail.com",
+                        phone: "<strong>Matkapuhelin:</strong> +34687334497"
+                    }
+                }
+            }
+        };
+
+        i18next.init({
+            lng: 'en',
+            resources
+        }, function (err, t) {
+            updateContent();
+        });
+
+        function updateContent() {
+            document.querySelectorAll('[data-i18n]').forEach(function (element) {
+                element.innerHTML = i18next.t(element.getAttribute('data-i18n'));
+            });
+        }
+
+        function changeLanguage(language) {
+            i18next.changeLanguage(language, function (err, t) {
+                updateContent();
+            });
+        }
+    </script>
+</body>
+
+</html>
